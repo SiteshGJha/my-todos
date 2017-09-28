@@ -24,6 +24,10 @@ clr-checkbox {
     border: 1px solid rgba(0, 16, 128, 0.18);
 }
 
+clr-checkbox, clr-icon {
+    display: inline-block;
+}
+
 .strike-text {
     text-decoration: line-through;
 }

@@ -3,6 +3,8 @@ import { TodoService } from '../service/todo-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { IUser } from '../service/user';
 
+import 'clarity-icons/shapes/essential-shapes';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -21,6 +23,7 @@ export class UserComponent implements OnInit {
   addTodo(){ //NOT Working ned to check
     this.todoService.createTodo(this.createData(this.todoText))
       .subscribe(data => console.log(data));
+    this.todoText = "";
   }
 
   createData(text:string):IUser {
@@ -34,11 +37,16 @@ export class UserComponent implements OnInit {
   }
 
   getId(id:number) {
-    return this.todoList[this.todoList.length - 1].id++
+    return ++this.todoList[this.todoList.length - 1].id;
   }
 
   // onChecked(event) { 
   //   event.stopPropagation();
   //   console.log(event);
+  // }
+
+  // remove(id:number) {
+  //   this.todoService.deleteTodo(id)
+  //     .subscribe(data => console.log(data));
   // }
 }

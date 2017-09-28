@@ -20,25 +20,25 @@ export class TodoService {
 			.catch(this.errorHandle);
 	}
 
-	createTodo(data:IUser) {
-		return this.http.post("http://jsonplaceholder.typicode.com/posts", data)
+	createTodo(data:IUser) { 
+		return this.http.post("https://jsonplaceholder.typicode.com/todos", data)
 			.map(response => response.json())
 			.catch(this.errorHandle);
 	}
 
 	updateTodo(data:IUser, id:number) {
-		return this.http.put("http://jsonplaceholder.typicode.com/posts/" + id, data)
+		return this.http.put("https://jsonplaceholder.typicode.com/todos/" + id, data)
 			.map(response => response.json())
 			.catch(this.errorHandle);
 	}
 
 	deleteTodo(id:number) {
-		return this.http.delete("http://jsonplaceholder.typicode.com/posts/" + id)
+		return this.http.delete("https://jsonplaceholder.typicode.com/todos/" + id)
 			.map(response => response.json())
 			.catch(this.errorHandle);
 	}
 
-	errorHandle(error:any) {
+	errorHandle(error:any) { debugger
 		return Observable.throw(error.json().error || 'Server error');
 	}
 }

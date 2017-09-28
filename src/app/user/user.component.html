@@ -3,6 +3,7 @@
       <clr-checkbox *ngFor="let todo of todoList"
         [(clrChecked)]="todo.completed">
         <span [ngClass]="{'strike-text': todo.completed}">{{todo.title}}</span>
+        <clr-icon shape="trash" size="24"></clr-icon>
       </clr-checkbox>
   </div>
   <div class="form-group">
