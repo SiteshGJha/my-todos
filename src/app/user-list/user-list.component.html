@@ -1,0 +1,36 @@
+<div class="row">
+    <div *ngFor="let user of userList" class="col-xs-4" >
+        <div class="card  user-card">
+            <div class="card-header">
+                {{user.name}}
+                <small>{{user.username}}</small>
+            </div>
+            <div class="card-block">
+                <small>
+                    <clr-icon shape="map-marker" class="is-solid" size="24"></clr-icon>
+                    <span class="pad-left" title="{{getAddressText(user.id)}}">{{getAddressText(user.id)}}
+                    </span>
+                </small>
+            </div>
+            <div class="card-block">
+                <small>
+                    <clr-icon shape="envelope" size="24"></clr-icon><span class="pad-left">{{user.email}}</span>
+                    <br />
+                    <clr-icon shape="network-globe"  size="24"></clr-icon><a href="http://www.{{user.website}}" class="pad-left">{{user.website}}</a>
+                    <br />
+                    <clr-icon shape="mobile" size="24"></clr-icon><span class="pad-left">{{user.phone}}</span>
+                </small>
+            </div>
+            <div class="card-block">
+                {{user.company?.name}}
+                <small>
+                    <div>{{user.company?.catchPhrase}}</div>
+                    <div>{{user.company?.bs}}</div>
+                </small>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" [routerLink]="['/user', user.id]" routerLinkActive="active">View Todos</a>
+            </div>
+        </div>
+    </div>
+</div>
