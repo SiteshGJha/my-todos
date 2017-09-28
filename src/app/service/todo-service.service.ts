@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http , Headers, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { IUsers, IUser } from './user';
@@ -20,14 +20,20 @@ export class TodoService {
 			.catch(this.errorHandle);
 	}
 
-	createTodo(data:IUser) { 
-		return this.http.post("https://jsonplaceholder.typicode.com/todos", data)
+	createTodo(data): Observable<IUser> { 
+		let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({headers: headers});
+
+		return this.http.post("https://jsonplaceholder.typicode.com/todos", JSON.stringify(data), options)
 			.map(response => response.json())
 			.catch(this.errorHandle);
 	}
 
-	updateTodo(data:IUser, id:number) {
-		return this.http.put("https://jsonplaceholder.typicode.com/todos/" + id, data)
+	updateTodo(data, id:number): Observable<IUser> {
+		let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({headers: headers});
+
+		return this.http.put("https://jsonplaceholder.typicode.com/todos/" + id, JSON.stringify(data), options)
 			.map(response => response.json())
 			.catch(this.errorHandle);
 	}
@@ -38,7 +44,7 @@ export class TodoService {
 			.catch(this.errorHandle);
 	}
 
-	errorHandle(error:any) { debugger
+	errorHandle(error:any) { 
 		return Observable.throw(error.json().error || 'Server error');
 	}
 }
