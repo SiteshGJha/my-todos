@@ -1,0 +1,8 @@
+<div class="user-wrapper">
+  <ul class="todo-list">
+    <li *ngFor="let todo of todoList" class="user-todo">
+      <input class="toggle" type="checkbox" (click)="toggleCompletion(todo)" [checked]="todo.completed">
+      <label (dblclick)="editTodo(todo)">{{todo.title}}</label>
+    </li>
+  </ul>
+</div>

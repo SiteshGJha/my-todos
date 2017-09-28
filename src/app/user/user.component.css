@@ -1,0 +1,14 @@
+.todo-list {
+    height: 80%;
+    width: 60%;
+    overflow: auto;
+    margin: 10px auto;
+}
+
+.user-todo {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    background: lightgray;
+    width: 100%;
+    border: 1px solid green;
+}
