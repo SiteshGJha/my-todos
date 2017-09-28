@@ -1,14 +1,29 @@
-.todo-list {
-    height: 80%;
+.user-wrapper {
+    height: calc(100% - 48px);
+}
+
+.todo-list, .form-group {
     width: 60%;
     overflow: auto;
     margin: 10px auto;
 }
 
-.user-todo {
-    padding: 5px 10px;
+.todo-list {
+    height: 80%;
+}
+
+.form-group input {
+    width: 100%
+}
+
+clr-checkbox {
+    padding: 17px;
     font-size: 1.2rem;
-    background: lightgray;
+    background: #bdc8d8;
     width: 100%;
-    border: 1px solid green;
+    border: 1px solid rgba(0, 16, 128, 0.18);
+}
+
+.strike-text {
+    text-decoration: line-through;
 }

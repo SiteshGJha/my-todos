@@ -7,6 +7,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { TodoService } from './service/todo-service.service';
 import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
+import { FormsModule } from '@angular/forms'
 import { NavComponent } from './nav/nav.component';
 import { UserComponent } from './user/user.component';
 import { routing } from './routing';
@@ -21,6 +22,7 @@ import { routing } from './routing';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     ClarityModule.forRoot(),
     routing
   ],
