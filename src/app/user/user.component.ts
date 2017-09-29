@@ -17,10 +17,13 @@ export class UserComponent implements OnInit {
 
   ngOnInit() { 
     return this.todoService.getUser(this.activatedRouter.snapshot.params["id"])
-        .subscribe(data => this.todoList = data);
+        .subscribe(data => {
+          this.todoList = data
+          console.log(this.todoList);
+        });
   }
 
-  addTodo(){ //NOT Working ned to check
+  addTodo(){ 
     this.todoService.createTodo(this.createData(this.todoText))
       .subscribe(data => console.log(data));
     this.todoText = "";
@@ -49,4 +52,8 @@ export class UserComponent implements OnInit {
   //   this.todoService.deleteTodo(id)
   //     .subscribe(data => console.log(data));
   // }
+
+  updateTodo(event:any) {};
+  removeTodo(event:any) {};
+
 }

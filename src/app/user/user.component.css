@@ -28,6 +28,17 @@ clr-checkbox, clr-icon {
     display: inline-block;
 }
 
+clr-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
 .strike-text {
     text-decoration: line-through;
+}
+
+.todo-wrapper {
+    position: relative
 }
