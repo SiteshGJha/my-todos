@@ -1,6 +1,6 @@
 <div class="user-wrapper">
   <div class="todo-list">
-    <div #todo=todo class="todo-wrapper" *ngFor="let todo of todoList">
+    <div class="todo-wrapper" *ngFor="let todo of todoList">
         <clr-checkbox 
         [(clrChecked)]="todo.completed" (click)="updateTodo($event)">
           <span [ngClass]="{'strike-text': todo.completed}">{{todo.title}}</span>
